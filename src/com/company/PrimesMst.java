@@ -20,15 +20,18 @@ class PrimesMst {
         ArrayList<Point> MST = new ArrayList<>();
         List<Integer> inMST = new ArrayList<>();
         List<Boolean> key = new ArrayList<>();
+
         for (int i = 0; i < n; i++) {
             key.add(i, false);
         }
+
         Point firstEdge = shortestEdge(dist);
         MST.add(firstEdge);
         inMST.add((int) firstEdge.x);
         inMST.add((int) firstEdge.y);
         key.set((int) firstEdge.x, true);
         key.set((int) firstEdge.y, true);
+
         while (inMST.size() < n) {
             int cut = Integer.MAX_VALUE;
             Point edge = new Point(Integer.MAX_VALUE, Integer.MAX_VALUE);
